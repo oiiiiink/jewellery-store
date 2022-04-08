@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "products")
 public class Product {
 
     @Id
@@ -29,12 +30,12 @@ public class Product {
     @Column(name = "long_description")
     private String longDescription;
 
-    @ManyToOne(fetch = FetchType.LAZY,
+    @ManyToOne(fetch = FetchType.EAGER,
         cascade = CascadeType.MERGE)
     @JoinColumn(name = "product_type_id")
     private ProductType productType;
 
-    @ManyToOne(fetch = FetchType.LAZY,
+    @ManyToOne(fetch = FetchType.EAGER,
         cascade = CascadeType.MERGE)
     @JoinColumn(name = "producer_id")
     private Producer producer;

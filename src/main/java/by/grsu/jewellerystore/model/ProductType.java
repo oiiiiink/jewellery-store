@@ -13,6 +13,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "product_types")
 public class ProductType {
 
     @Id

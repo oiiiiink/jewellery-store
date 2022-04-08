@@ -24,16 +24,44 @@
             <h2 class="w3-wide w3-center">SHOPPING DIRECTORY</h2>
             <p class="w3-opacity w3-center"><i>Remember to book your jewellery!</i></p><br>
 
-            <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
-                <div class="w3-third w3-margin-bottom">
-                    <img src="/w3images/newyork.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">
-                    <div class="w3-container w3-white">
-                        <p><b>New York</b></p>
-                        <p class="w3-opacity">Fri 27 Nov 2016</p>
-                        <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                        <a th:href="/" class="w3-button w3-black w3-margin-bottom">Order</a>
-                    </div>
+                <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+                    <tr th:each="product:${products}">
+                        <div class="w3-third w3-margin-bottom">
+                            <img th:src="@{${product.presentationImage}}" style="width:100%" class="w3-hover-opacity">
+                            <div class="w3-container w3-white">
+                                <p><b th:utext="${product.title}">...</b></p>
+                                <p class="w3-opacity" th:utext="${product.productType.type}">...</p>
+                                <p th:utext="${product.shortDescription}">...</p>
+                                <a th:href="@{/product/{productId}(productId=${product.id})}" class="w3-button w3-black w3-margin-bottom">Order</a>
+                            </div>
+                        </div>
+                    </tr>
                 </div>
+        </div>
+    </div>
+
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+        <h2 class="w3-wide w3-center">CONTACT US</h2>
+        <p class="w3-opacity w3-center"><i>Want to partner? Drop a note!</i></p>
+        <div class="w3-row w3-padding-32">
+            <div class="w3-col m6 w3-large w3-margin-bottom">
+                <i class="fa fa-map-marker" style="width:30px"></i> Grodno, Belarus<br>
+                <i class="fa fa-phone" style="width:30px"></i> Phone: +375(29)789-98-76<br>
+                <i class="fa fa-envelope" style="width:30px"> </i> Email: contact@jewellery.com<br>
+            </div>
+            <div class="w3-col m6">
+                <form th:object="${feedBack}" target="_blank">
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                        <div class="w3-half">
+                            <input th:field="*{name}" class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                        </div>
+                        <div class="w3-half">
+                            <input th:field="*{email}" class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                        </div>
+                    </div>
+                    <input th:field="*{message}" class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+                    <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+                </form>
             </div>
         </div>
     </div>

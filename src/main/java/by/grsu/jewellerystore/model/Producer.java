@@ -13,6 +13,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "producers")
 public class Producer {
 
     @Id
