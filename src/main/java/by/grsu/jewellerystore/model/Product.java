@@ -30,6 +30,9 @@ public class Product {
     @Column(name = "long_description")
     private String longDescription;
 
+    @Column(name = "price")
+    private Double price;
+
     @ManyToOne(fetch = FetchType.EAGER,
         cascade = CascadeType.MERGE)
     @JoinColumn(name = "product_type_id")

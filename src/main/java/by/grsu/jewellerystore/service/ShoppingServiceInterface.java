@@ -8,4 +8,6 @@ public interface ShoppingServiceInterface {
 
     List<Product> getAllProducts();
 
+    Product getProductById(Long id);
+
 }

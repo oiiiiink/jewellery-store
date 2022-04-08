@@ -22,4 +22,11 @@ public class ShoppingService implements ShoppingServiceInterface {
         return products;
     }
 
+    @Override
+    public Product getProductById(Long id) {
+
+        return productRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Something went wrong"));
+    }
+
 }

@@ -1,6 +1,7 @@
 create table products (
     id bigserial primary key,
     title varchar(30),
+    price decimal,
     presentation_image text not null,
     short_description varchar not null,
     long_description text not null,
