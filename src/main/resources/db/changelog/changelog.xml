@@ -7,51 +7,51 @@
         logicalFilePath="db/changelog">
 
     <changeSet id="create-users-table" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/01.users-table-create.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/02.users-table-create.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="insert-into-users-table" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/02.users-table-data-insert.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/03.users-table-data-insert.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="product-types-table-create" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/03.product-types-table-create.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/04.product-types-table-create.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="product-types-data-insert" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/04.product-types-data-insert.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/05.product-types-data-insert.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="producers-table-create" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/05.producers-table-create.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/06.producers-table-create.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="producer-table-data-insert" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/06.producer-table-data-insert.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/07.producer-table-data-insert.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="products-table-create" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/07.products-table-create.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/08.products-table-create.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="products-table-data-insert" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/08.products-table-data-insert.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/09.products-table-data-insert.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="shopping_cards-table-create" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/09.shopping_cards-table-create.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/10.shopping_cards-table-create.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="shopping_cards-data-insert" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="./sql/10.shopping_cards-table-data-insert.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/11.shopping_cards-table-data-insert.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="order_statuses-table-create" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="./sql/11.order_statuses-table-create.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/12.order_statuses-table-create.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="order_statuses-data-insert" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/12.order_statuses-data-insert.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/13.order_statuses-data-insert.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
 </databaseChangeLog> 
