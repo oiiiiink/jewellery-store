@@ -2,10 +2,8 @@ package by.grsu.jewellerystore.model;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -32,5 +30,10 @@ public class User {
 
     @Column(name = "delivery_address")
     private String deliveryAddress;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "shopping_cards", joinColumns = @JoinColumn(name = "users_id"),
+    inverseJoinColumns = @JoinColumn(name = "products_id"))
+    private Set<Product> shoppingCard;
 
 }
