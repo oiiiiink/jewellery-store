@@ -6,52 +6,60 @@
       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd"
         logicalFilePath="db/changelog">
 
+    <changeSet id="roles-table-create.sql" author="Anastasiya Zhukovets">
+        <sqlFile encoding="utf8" path="sql/01.roles-table-create.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="roles-table-data-insert" author="Anastasiya Zhukovets">
+        <sqlFile encoding="utf8" path="sql/02.roles-table-data-insert.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
     <changeSet id="create-users-table" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/02.users-table-create.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/04.users-table-create.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="insert-into-users-table" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/03.users-table-data-insert.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/05.users-table-data-insert.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="product-types-table-create" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/04.product-types-table-create.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/06.product-types-table-create.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="product-types-data-insert" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/05.product-types-data-insert.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/07.product-types-data-insert.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="producers-table-create" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/06.producers-table-create.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/08.producers-table-create.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="producer-table-data-insert" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/07.producer-table-data-insert.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/09.producer-table-data-insert.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="products-table-create" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/08.products-table-create.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/10.products-table-create.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="products-table-data-insert" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/09.products-table-data-insert.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/11.products-table-data-insert.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="shopping_cards-table-create" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/10.shopping_cards-table-create.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/12.shopping_cards-table-create.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="shopping_cards-data-insert" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/11.shopping_cards-table-data-insert.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/13.shopping_cards-table-data-insert.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="order_statuses-table-create" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/12.order_statuses-table-create.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/14.order_statuses-table-create.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="order_statuses-data-insert" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/13.order_statuses-data-insert.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="sql/15.order_statuses-data-insert.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
 </databaseChangeLog> 
