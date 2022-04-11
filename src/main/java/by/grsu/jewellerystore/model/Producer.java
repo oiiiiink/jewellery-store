@@ -17,12 +17,13 @@ import java.util.Set;
 public class Producer {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "title")
     private String title;
 
-    @Column(name = "contactPhone")
+    @Column(name = "contact_phone")
     private String contactPhone;
 
     @Column(name = "short_description")

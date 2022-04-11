@@ -30,7 +30,7 @@
     </div>
 
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
-        <h2 class="w3-wide w3-center">CONTACT US</h2>
+        <h2 class="w3-wide w3-center">ORDER</h2>
         <p class="w3-opacity w3-center"><i>Want to partner? Drop a note!</i></p>
         <div class="w3-row w3-padding-32">
             <div class="w3-col m6 w3-large w3-margin-bottom">
@@ -39,20 +39,56 @@
                 <i class="fa fa-envelope" style="width:30px"> </i> Email: contact@jewellery.com<br>
             </div>
             <div class="w3-col m6">
-                <form th:object="${feedBack}" target="_blank">
                     <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                         <div class="w3-half">
-                            <input th:field="*{name}" class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                            <input id="name" class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
                         </div>
                         <div class="w3-half">
-                            <input th:field="*{email}" class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                            <input id="address" class="w3-input w3-border" type="text" placeholder="Address" required name="Address">
                         </div>
                     </div>
-                    <input th:field="*{message}" class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-                    <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
-                </form>
+                    <input id="phoneNum" class="w3-input w3-border" type="text" placeholder="Phone number" required name="Phone number">
+                    <button onclick="redirect()" class="w3-button w3-black w3-section w3-right">SEND</button>
             </div>
         </div>
     </div>
+
+    <script>
+        let productId;
+        let customerName;
+        let deliveryAddress;
+        let phoneNumber;
+
+        function redirect() {
+            productId = String(document.location.href).split('/')[4];
+            customerName = document.getElementById('name').value;
+            deliveryAddress = document.getElementById('address').value;
+            phoneNumber = document.getElementById('phoneNum').value;
+
+            if (isValuesValid())
+                window.location.href = "/products?productId=" + productId + "&customer="
+                    + customerName + "&address=" + deliveryAddress + "&phoneNum=" + phoneNumber;
+        }
+
+        function isValuesValid() {
+            if (customerName.split(' ').length !== 2) {
+                document.getElementById(name).style.border = "1px solid red";
+
+                return false;
+            } else if (deliveryAddress === "") {
+                document.getElementById("address").style.border = "1px solid red";
+
+                return false;
+            } else if (phoneNumber === "" || phoneNumber.startsWith("+")) {
+                document.getElementById("phoneNum").style.border = "1px solid red";
+
+                return false;
+            } else {
+
+                return true;
+            }
+        }
+
+    </script>
 
 </body>
