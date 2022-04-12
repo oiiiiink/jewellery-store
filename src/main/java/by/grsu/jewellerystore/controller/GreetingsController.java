@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class GreetingsController {
 
-    @GetMapping()
+    @GetMapping("")
     public String getStartPage(Model model) {
         model.addAttribute("feedBack", new FeedbackDto());
 
