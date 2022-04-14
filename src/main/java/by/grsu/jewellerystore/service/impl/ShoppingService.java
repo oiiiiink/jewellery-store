@@ -1,9 +1,10 @@
-package by.grsu.jewellerystore.service;
+package by.grsu.jewellerystore.service.impl;
 
 import by.grsu.jewellerystore.model.Product;
 import by.grsu.jewellerystore.model.User;
 import by.grsu.jewellerystore.repository.ProductRepository;
 import by.grsu.jewellerystore.repository.UserRepository;
+import by.grsu.jewellerystore.service.ShoppingServiceInterface;
 import com.ibm.icu.text.Transliterator;
 import lombok.Builder;
 import lombok.Getter;
