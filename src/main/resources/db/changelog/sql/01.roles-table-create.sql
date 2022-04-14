@@ -1,4 +1,4 @@
 create table roles (
-    id serial,
+    id bigserial primary key,
     name varchar
 );

@@ -5,5 +5,5 @@ create table users (
     first_name varchar(25) not null,
     phone_number varchar(25) not null,
     delivery_address varchar(100) not null,
-    role_id bigint references roles(id)
+    roles_id bigint references roles(id)
 );
