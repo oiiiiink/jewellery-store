@@ -4,7 +4,5 @@ create table users (
     last_name varchar(70) not null,
     first_name varchar(25) not null,
     phone_number varchar(25) not null,
-    delivery_address varchar(100) not null,
-    role_id bigint not null,
-    foreign key (role_id) references roles(id)
+    delivery_address varchar(100) not null
 );
