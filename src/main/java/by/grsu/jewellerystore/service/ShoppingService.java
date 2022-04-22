@@ -40,15 +40,22 @@ public class ShoppingService implements ShoppingServiceInterface {
     public User orderAnItem(Long productId, String customerName, String address, String phoneNumber){
         CustomerName customerInformation = extractCustomerName(customerName);
 
-        User user = userRepository
-                .findUserByFirstNameAndLastName(customerInformation.getFirstName(),
-                        customerInformation.getLastName())
-                .orElseGet(() -> userRepository.save(new User().setFirstName(customerInformation.getFirstName())
-                        .setLastName(customerInformation.getLastName())
-                        .setDeliveryAddress(address)
-                        .setPhoneNumber(customerInformation.getNumber(phoneNumber))
-                        .setUsername(customerInformation.generateLogin()))
-                );
+        User user;
+
+        if (!userRepository.existsByPhoneNumberAndFirstNameAndLastName(phoneNumber, customerInformation.getFirstName(),
+                customerInformation.getLastName())) {
+
+            user = userRepository.save(new User().setFirstName(customerInformation.getFirstName())
+                    .setLastName(customerInformation.getLastName())
+                    .setDeliveryAddress(address)
+                    .setPhoneNumber(customerInformation.getNumber(phoneNumber))
+                    .setUsername(customerInformation.generateLogin()));
+
+        } else {
+            user = userRepository.findUserByFirstNameAndLastName(customerInformation.getFirstName(),
+                    customerInformation.getLastName()).orElseThrow(() -> new RuntimeException());
+        }
+
 
         if (Objects.isNull(user.getShoppingCard())) {
             user.setShoppingCard(new ArrayList<>() {{ add(productRepository.findById(productId)

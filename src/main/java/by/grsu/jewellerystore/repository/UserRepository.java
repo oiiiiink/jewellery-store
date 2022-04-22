@@ -7,6 +7,8 @@ import java.util.Optional;
 
 public interface UserRepository extends CrudRepository<User, Long> {
 
+    Boolean existsByPhoneNumberAndFirstNameAndLastName(String phoneNumber, String firstName, String lastName);
+
     Optional<User> findUserByFirstNameAndLastName(String firstName, String lastName);
 
 }
