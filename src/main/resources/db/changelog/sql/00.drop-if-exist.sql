@@ -1,1 +1,1 @@
-drop database [if exists] "jew-store";
+drop database if exists "jew-store";
