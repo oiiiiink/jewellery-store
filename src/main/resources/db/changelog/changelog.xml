@@ -6,10 +6,6 @@
       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd"
         logicalFilePath="db/changelog">
 
-    <changeSet id="drop-if-exist.sql" author="Anastasiya Zhukovets">
-        <sqlFile encoding="utf8" path="sql/00.drop-if-exist.sql" relativeToChangelogFile="true"/>
-    </changeSet>
-
     <changeSet id="roles-table-create.sql" author="Anastasiya Zhukovets">
         <sqlFile encoding="utf8" path="sql/01.roles-table-create.sql" relativeToChangelogFile="true"/>
     </changeSet>
