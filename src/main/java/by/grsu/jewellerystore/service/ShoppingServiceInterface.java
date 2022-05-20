@@ -9,6 +9,8 @@ public interface ShoppingServiceInterface {
 
     List<Product> getAllProducts();
 
+    List<Product> getProductsByCategory(String category);
+
     Product getProductById(Long id);
 
     User orderAnItem(Long productId, String customerName, String address, String phoneNumber);

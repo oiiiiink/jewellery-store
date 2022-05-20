@@ -13,7 +13,7 @@
     <div class="w3-top">
         <div class="w3-bar w3-black w3-card">
             <a href="/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-            <a href="/shopping" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SHOP</a>
+            <a href="/categories" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SHOP</a>
             <a href="/" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT US</a>
             <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PARTNERSHIP</a>
         </div>
@@ -22,7 +22,8 @@
     <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
         <h2 class="w3-wide">[[${product.title}]]</h2>
         <p class="w3-opacity"><i>[[${product.productType.type}]] by [[${product.producer.title}]]</i></p>
-        <p class="w3-justify">[[${product.longDescription}]]</br></br>Producer contacts: [[${product.producer.contactPhone}]]</p>
+        <p class="w3-justify">[[${product.longDescription}]]</br>Producer contacts: [[${product.producer.contactPhone}]]</p>
+        <p class="w3-justify">Size: [[${product.size}]]</br>Stone type: [[${product.stone.title}]] ([[${product.stone.type}]])</p>
         <img th:src="@{${product.presentationImage}}" class="w3-round w3-margin-bottom" style="width:30%">
         <p class="w3-opacity"><i>[[${product.price}]]$</i></p>
     </div>

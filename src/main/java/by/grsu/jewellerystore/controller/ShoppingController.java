@@ -19,13 +19,13 @@ public class ShoppingController {
 
     private final ShoppingServiceInterface shoppingServiceInterface;
 
-    @GetMapping("shopping")
+    @GetMapping("categories")
     public String getShoppingPage(Model model) {
 
-        model.addAttribute("products", shoppingServiceInterface.getAllProducts());
+        //model.addAttribute("products", shoppingServiceInterface.getAllProducts());
         model.addAttribute("feedBack", new FeedbackDto());
 
-        return "shop.html";
+        return "categories.html";
     }
 
     @GetMapping("product/{id}")
@@ -49,6 +49,16 @@ public class ShoppingController {
 
         model.addAttribute("feedBack", new FeedbackDto());
         return "user_orders.html";
+    }
+
+    @GetMapping("/shopping/{type}")
+    public String getItemsByCategory(Model model,
+                                     @PathVariable String type) {
+
+        model.addAttribute("products", shoppingServiceInterface.getProductsByCategory(type));
+        model.addAttribute("feedBack", new FeedbackDto());
+
+        return "shop.html";
     }
 
 }

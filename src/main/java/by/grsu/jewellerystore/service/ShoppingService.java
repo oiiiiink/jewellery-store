@@ -30,6 +30,15 @@ public class ShoppingService implements ShoppingServiceInterface {
     }
 
     @Override
+    public List<Product> getProductsByCategory(String category) {
+        List<Product> products = productRepository.getProductByProductType_Type(category);
+
+        products.forEach(x -> x.setShortDescription(x.getShortDescription().substring(0, 57) + "..."));
+
+        return products;
+    }
+
+    @Override
     public Product getProductById(Long id) {
 
         return productRepository.findById(id)

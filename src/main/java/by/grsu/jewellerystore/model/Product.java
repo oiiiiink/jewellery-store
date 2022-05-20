@@ -35,6 +35,14 @@ public class Product {
     @Column(name = "price")
     private Double price;
 
+    @Column(name = "size")
+    private Double size;
+
+    @ManyToOne(fetch = FetchType.EAGER,
+            cascade = CascadeType.DETACH)
+    @JoinColumn(name = "stone_id")
+    private Stone stone;
+
     @ManyToOne(fetch = FetchType.EAGER,
         cascade = CascadeType.MERGE)
     @JoinColumn(name = "product_type_id")
